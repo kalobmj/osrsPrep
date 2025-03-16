@@ -17,13 +17,13 @@ app.get('/api/itemId:firstLetter', cors(), async (req, res) => {
     let baseURL = 'https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/items.json?category=1&alpha=';
 
     try {
-        const res = await fetch(`${baseURL}${firstLetter}`);
-        if (!res.ok) {
+        const response = await fetch(`${baseURL}${firstLetter}`);
+        if (!response.ok) {
             throw new Error(`Error calling api with first letter ${firstLetter}`)
         };
-        const data = await res.json();
+        const data = await response.json();
         console.log({data});
-        res.send(JSON.stringify(data))
+        res.send(data)
     } catch(err) {
         console.log('err found')
         console.error(err)

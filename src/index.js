@@ -1,3 +1,6 @@
+
+const resDisplay = document.getElementById('data-res');
+
 const fetchItemId = async (item) => {
 
     console.log('Fetch itemId starting...')
@@ -15,6 +18,10 @@ const fetchItemId = async (item) => {
         };
         const data = await res.json();
         console.log(`${item} data: `, data)
+        const newData = JSON.stringify(data);
+        const parsedData = JSON.parse(newData);
+        console.log(parsedData['shark'])
+        resDisplay.innerText = JSON.stringify(data);
     } catch(err) {
         console.error(err)
     };
