@@ -1,0 +1,2 @@
+3/16
+    have a api url to call to get ge price and id using a name search query. this is how we will get our id for each item. then we will use that id to get its price, icon image and such.

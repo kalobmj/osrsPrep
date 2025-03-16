@@ -22,3 +22,7 @@
 // For example, if we want to see the image for Mod Daze's homework, we'd go to https://services.runescape.com/m=itemdb_rs/obj_big.gif?id=34775 for a detailed image or https://services.runescape.com/m=itemdb_rs/obj_sprite.gif?id=34775 for the inventory icon. Unlike the images as seen in the game, the Grand Exchange Database images have a completely solid line surrounding items, which is different from ingame since there are breaks in images for borders.
 
 // Note that item images retrieved outside of the above place the most recent runedate before obj_big and obj_sprite. When the next system update occurs and info.json is updated, the link no longer operates for those that had a runedate in the link. 
+
+// fetch item id
+
+// https://api.weirdgloop.org/exchange/history/osrs/latest?name=Nightmare%20staff
