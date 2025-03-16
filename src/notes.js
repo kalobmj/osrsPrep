@@ -26,3 +26,10 @@
 // fetch item id
 
 // https://api.weirdgloop.org/exchange/history/osrs/latest?name=Nightmare%20staff
+
+// name 	separated list of item names to fetch. These use the exact names as the Exchange pages on the wiki (case sensitive). If both name and id specified, only id is used. Only the /latest supports more than one item at a time. 	
+
+// ?name=Abyssal%20whip
+// ?name=Abyssap%20whip|Chronotes
+
+// https://corsproxy.io/?url=https://example.com
