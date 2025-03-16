@@ -2,20 +2,35 @@ const fetchItemId = async (item) => {
 
     console.log('Fetch itemId starting...')
 
+    const baseURL = 'http://localhost:5000/api/itemId';
+
     // first letter of item
     const searchLetter = item[0];
     console.log({searchLetter})
-    
+
     try {
-        const res = await fetch(`https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/items.json?category=1&alpha=${searchLetter}`);
+        const res = await fetch(`${baseURL}${searchLetter}`);
         if (!res.ok) {
-            throw new Error(`Error grabbing page of items starting with the letter ${searchLetter}`)
+            throw new Error(`Error calling backend...`)
         };
         const data = await res.json();
-        console.log({data})
+        console.log(`${item} data: `, data)
     } catch(err) {
         console.error(err)
-    }
+    };
+    
+    // try {
+    //     const res = await fetch(`https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/items.json?category=1&alpha=${searchLetter}`);
+    //     if (!res.ok) {
+    //         throw new Error(`Error grabbing page of items starting with the letter ${searchLetter}`)
+    //     };
+    //     const data = await res.json();
+    //     console.log({data})
+    // } catch(err) {
+    //     console.error(err)
+    // }
+
+
 
     console.log('Fetch itemId completed')
 
