@@ -118,7 +118,7 @@ const testFetchId = async (id) => {
     // our CORS workaround
     const corsURL = 'https://corsproxy.io/?url=';
     
-    const baseURL = 'https://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item='
+    const baseURL = 'https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item='
 
     console.log('This is our cors url: ', `${corsURL}${baseURL}${id}`);
     
@@ -138,9 +138,10 @@ const testFetchId = async (id) => {
     
 }
 
-fetchPrice('Nightmare staff');
-fetchPrice('3rd age platebody');
+// fetchPrice('Nightmare staff');
+// fetchPrice('3rd age platebody');
 testFetchId(10348) // 3rd age platebody Id
-testFetchId(24422) // Nightmare staff Id
+// testFetchId(24422) // Nightmare staff Id
+testFetchId(4151) // Abyssal whip Id
 
 // fetchItemId('shark')
