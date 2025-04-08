@@ -4282,4 +4282,10 @@ console.log({itemNamesFilterTestAbyss})
 
 // div search -> input elem -> div results -> unordered list(ul) -> list elem(li) -> default to prob just span elem (or when user presses the search will begin) / takes item clicked, and executed search with completed item name
 
+// can possibly include a search icon in the search dropdown. This would prob require taking a hardcode list of the item names, mapping over each then grabbing the item names and updating the list possibly. I feel like calling the api on each item might have many api calls. might skip the feature all together and might just have the item names
 
+// user searches
+// on keydown, filter out item list and display top 10 items
+// take this list on the fly, and map over each item, to create list elements, then take those items and add them to the unordered list using innerHTML
+// when user backtracks, execute the same logic.
+// when search bar is empty, remove list elements and hide dropdown. 
