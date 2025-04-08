@@ -4255,7 +4255,7 @@ const data = {
 
 // arr of keys
 let itemNames = Object.keys(data);
-itemNames.forEach(item => item.toLowerCase())
+itemNames = itemNames.map(item => item.toLowerCase())
 // copy of itemNames for filter
 let itemNamesCopy = itemNames;
 
@@ -4266,7 +4266,17 @@ const searchBar = document.getElementById('search-bar');
 
 searchBar.addEventListener('keydown', () => {
     console.log('change occured');
-    // itemNamesCopy = itemNames.filter(item => {
+	// copy of itemNames for filter
+	let itemNamesCopy = itemNames;
+	// this should filter from harcoded item list, based on user current input value
+	itemNamesCopy = itemNamesCopy.filter(item => item.includes(searchBar.value))
+	console.log({itemNamesCopy})
+});
 
-    // })
-})
+// filter working
+let itemNamesFilterTestAbyss = itemNames.filter(item => item.includes('abyss'));
+
+console.log({itemNamesFilterTestAbyss})
+
+// we will have the input bar update on each user keydown. This keydown will run a filter to determine the items that match the users input. If more than 10 include the top 10 items, if not just display what is available.
+
