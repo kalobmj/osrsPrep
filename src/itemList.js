@@ -4280,3 +4280,6 @@ console.log({itemNamesFilterTestAbyss})
 
 // we will have the input bar update on each user keydown. This keydown will run a filter to determine the items that match the users input. If more than 10 include the top 10 items, if not just display what is available.
 
+// div search -> input elem -> div results -> unordered list(ul) -> list elem(li) -> default to prob just span elem (or when user presses the search will begin) / takes item clicked, and executed search with completed item name
+
+
