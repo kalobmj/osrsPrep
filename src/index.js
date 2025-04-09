@@ -143,5 +143,7 @@ const testFetchId = async (id) => {
 testFetchId(10348) // 3rd age platebody Id
 // testFetchId(24422) // Nightmare staff Id
 testFetchId(4151) // Abyssal whip Id
+fetchPrice('Dragon dagger(p++)')
+testFetchId(5698)
 
 // fetchItemId('shark')
