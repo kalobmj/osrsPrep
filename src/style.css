@@ -17,3 +17,7 @@
 /* #search-result-list-item {
     position: absolute;
 } */
+
+#search-bar {
+    margin-bottom: 5px;
+}
