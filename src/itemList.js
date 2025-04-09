@@ -3,8 +3,6 @@ import data from "./data.js";
 // arr of keys
 let itemNames = Object.keys(data);
 itemNames = itemNames.map(item => item.toLowerCase())
-// copy of itemNames for filter
-let itemNamesCopy = itemNames;
 
 console.log(itemNames)
 
@@ -15,6 +13,8 @@ const searchOptions = document.getElementById('options');
 const dataRes = document.getElementById('data-res');
 
 searchBar.value = ''
+
+console.log(dataRes)
 
 // searchBar keydown event
 searchBar.addEventListener('keyup', () => {
@@ -31,14 +31,10 @@ searchBar.addEventListener('keyup', () => {
 
 	searchOptions.innerHTML = ''
 
-	function onClickForDataRes(val) {
-		dataRes.innerText = val
-	};
-
 	firstTenItems.map(items => {
 		searchOptions.innerHTML += `
 			<li id='search-result-list-item' class='list-group-item'>
-				<a href='#' onClick="dataRes.innerText='${items}'">
+				<a href='#' onClick="document.getElementById('data-res').innerText='${items}'">
 					<span id='search-result-list-name'>
 						${items}
 					</span>
