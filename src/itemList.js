@@ -1,6 +1,4 @@
 const data = {
-	"%LAST_UPDATE%": 1744007832,
-	"%LAST_UPDATE_F%": "07 April 2025 06:37:12 (UTC)",
 	"3rd age amulet": 10344,
 	"3rd age axe": 20011,
 	"3rd age bow": 12424,
@@ -4263,20 +4261,48 @@ console.log(itemNames)
 
 
 const searchBar = document.getElementById('search-bar');
+const searchBtn = document.getElementById('search-btn');
+const searchOptions = document.getElementById('options');
 
-searchBar.addEventListener('keydown', () => {
+// searchBar keydown event
+searchBar.addEventListener('keyup', () => {
     console.log('change occured');
 	// copy of itemNames for filter
 	let itemNamesCopy = itemNames;
 	// this should filter from harcoded item list, based on user current input value
 	itemNamesCopy = itemNamesCopy.filter(item => item.includes(searchBar.value))
+	console.log(searchBar.value)
 	console.log({itemNamesCopy})
+
+	let firstTenItems = itemNamesCopy.slice(0, 10);
+	console.log({firstTenItems});
+
+	searchOptions.innerHTML = ''
+
+	firstTenItems.map(items => {
+		searchOptions.innerHTML += `
+			<li id='search-result-list-item' class='list-group-item'>
+				<span id='search-result-list-name'>
+					${items}
+				</span>
+			</li>
+		`
+	});
+
+	console.log(searchOptions.innerHTML)
+
+	if (searchBar.value === '') {
+		searchOptions.innerHTML = ''
+	}
+
 });
 
 // filter working
 let itemNamesFilterTestAbyss = itemNames.filter(item => item.includes('abyss'));
 
 console.log({itemNamesFilterTestAbyss})
+
+
 
 // we will have the input bar update on each user keydown. This keydown will run a filter to determine the items that match the users input. If more than 10 include the top 10 items, if not just display what is available.
 
